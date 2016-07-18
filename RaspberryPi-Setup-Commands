@@ -1,0 +1,18 @@
+# Commands for Raspberry Pi Setup
+Here are the commands, in order, to be entered into the Raspberry Pi cammand line for setup.
+For information on how to use these commands and understand what they do go to the RaspberryPi-Instructions.md file.
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo rpi-udate
+
+cat /etc/network/interfaces
+ifconfig
+netstat -nr
+sudo nano /etc/network/interfaces
+sudo rm/var/lin/dhcp/*
+
+sudo apt-get install xrdp
+
+sudo raspi-config
+reboot
