@@ -1,0 +1,44 @@
+# Commands for Python3 OpenCV Setup for the Raspberry Pi
+Here are the commands, in order, to be entered into the Raspberry Pi cammand line for setting up OpenCV.
+For information on how to use these commands and understand what they do go to the RaspberryPi-OpenCV-Instructions.md file.
+
+
+sudo apt-get update
+Y
+sudo apt-get upgrade
+Y
+sudo rpi-update
+Y
+sudo reboot
+
+sudo --H pip3 install pip3 --upgrade pip
+sudo pip3 install numpy --upgrade
+sudo apt-get install build-essential git cmake pkg-config
+Y
+sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+Y
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+Y
+sudo apt-get install libxvidcore-dev libx264-dev
+Y
+sudo apt-get install libgtk2.0-dev
+Y
+sudo apt-get install libatlas-base-dev gfortran
+Y
+sudo apt-get install python2.7-dev python3-dev
+sudo rm -rf ~/.cache/pip
+
+cd ~/opencv-3.1.0/
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+	-D CMAKE_INSTALL_PREFIX=/usr/local \
+	-D INSTALL_C_EXAMPLES=OFF \
+	-D INSTALL_PYTHON_EXAMPLES=ON \
+	-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules \
+	-D BUILD_EXAMPLES=ON ..
+make -j4
+sudo make install
+sudo ldconfig
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
